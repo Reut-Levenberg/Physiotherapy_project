@@ -11,6 +11,7 @@ export class Main extends Component {
             <div className="App">
             <NavigationBar/>
             {/* <Page page={page}/> */}
+            <h1>hi</h1>
           </div>
         )
     }

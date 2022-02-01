@@ -15,6 +15,8 @@ export class Page extends Component {
                 {(this.props.page == 'Home') ? <Home/>:''}
                 {(this.props.page == 'PracticePage') ? <PracticePage/>:''}
                 {(this.props.page == 'Setup') ? <Setup/>:''}
+
+                
             </div>
         )
     }
