@@ -9,9 +9,8 @@ export class Main extends Component {
     render() {
         return (
             <div className="App">
-            <NavigationBar/>
-            {/* <Page page={page}/> */}
-            <h1>hi</h1>
+                <NavigationBar setIsLogin={this.props.setIsLogin}/>
+                <Page dataGraph={this.props.dataGraph} graphSetup={this.props.graphSetup} setGraphSetup={this.props.setGraphSetup}/>
           </div>
         )
     }

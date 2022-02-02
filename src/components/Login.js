@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
-export default class Login extends Component {
+export class Login extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    handleLogin = () => {
+        this.props.setIsLogin(true);
+    }
+
     render() {
         return (
             <form>
@@ -23,7 +32,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={this.handleLogin}>Submit</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
