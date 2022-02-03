@@ -1,11 +1,13 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useInterval } from 'usehooks-ts'
-import {Footer} from './components/Footer'
-import {EntranceManagement} from './components/EntranceManagement'
-import {Main} from './components/Main'
+import Footer from './components/Footer'
+import EntranceManagement from './components/EntranceManagement'
+import Main from './components/Main'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Chart from 'chart.js/auto'
+import cloneDeep from 'lodash/cloneDeep';
+
 
 const App = () => {
   
@@ -22,6 +24,7 @@ const App = () => {
         label: "Maximum",
         backgroundColor: "rgb(255, 0, 0)",
         borderColor: "rgb(255, 0, 0)",
+        visible: true,
         data: [
                 100,100,100,100,100,100,100,100,100,100,
                 100,100,100,100,100,100,100,100,100,100,
@@ -35,6 +38,7 @@ const App = () => {
         label: "Left",
         backgroundColor: "rgb(60, 179, 113)",
         borderColor: "rgb(60, 179, 113)",
+        hidden: false,
         data:[
           0,0,0,0,0,0,0,0,0,0,
           0,0,0,0,0,0,0,0,0,0,
@@ -48,6 +52,7 @@ const App = () => {
         label: "Right",
         backgroundColor: "rgb(0, 0, 255)",
         borderColor: "rgb(0, 0, 255)",
+        hidden: false,
         data: [
           0,0,0,0,0,0,0,0,0,0,
           0,0,0,0,0,0,0,0,0,0,
@@ -61,6 +66,7 @@ const App = () => {
         label: "Minimum",
         backgroundColor: "rgb(255, 165, 0)",
         borderColor: "rgb(255, 165, 0)",
+        visible: true,
         data: [
                 30,30,30,30,30,30,30,30,30,30,
                 30,30,30,30,30,30,30,30,30,30,
@@ -68,7 +74,7 @@ const App = () => {
                 30,30,30,30,30,30,30,30,30,30,
                 30,30,30,30,30,30,30,30,30,30,
                 30,30,30,30,30,30,30,30,30,30
-              ]
+          ]
       },
     ],
   })
@@ -80,7 +86,6 @@ const App = () => {
   });
 
   useEffect(() => {
-    
   });
 
   const getRandomInt = (max) => {
@@ -93,10 +98,9 @@ const App = () => {
       copy.datasets[1].data.pop();
       copy.datasets[2].data.unshift(getRandomInt(150));
       copy.datasets[2].data.pop();
-      setDataGraph(copy);
-      console.log(dataGraph.datasets[0].data);
-      count++
-      // console.log(dataGraph.datasets[1].data);
+      // copy.datasets[2].hidden = true;
+      // setDataGraph(copy);
+      count++;
       timeout();
     }, 10000);
   }
@@ -104,14 +108,17 @@ const App = () => {
    
   const [isLogin, setIsLogin] = useState(false);
   const [count, setCount] = useState(0);
+  const [testObj, setTestObj] = useState({testString:"blabla"});
+
   useInterval(() => {
       setCount(count + 1)
     },1000)
 
   return (
     <div className="App">
-      {(isLogin) ? <Main setIsLogin={setIsLogin} dataGraph={dataGraph} graphSetup={graphSetup} setGraphSetup={setGraphSetup}/> : <EntranceManagement setIsLogin={setIsLogin}/>}
+      {(isLogin) ? <Main testObj={testObj} setIsLogin={setIsLogin} dataGraph={dataGraph} setDataGraph={setDataGraph} graphSetup={graphSetup} setGraphSetup={setGraphSetup}/> : <EntranceManagement setTestObj={setTestObj} setIsLogin={setIsLogin}/>}
       <Footer/>
+      <h2>{testObj.testString}</h2>
     </div>
   );
 }

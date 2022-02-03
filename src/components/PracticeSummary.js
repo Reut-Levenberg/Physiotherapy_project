@@ -1,14 +1,9 @@
-import react,{Component} from 'react'
 
-export class PracticeSummary extends Component {
+const PracticeSummary = () =>  {
 
-    render() {
-        return (
-            <h1>practiceSummary</h1>
-
-
-
-            
-        )
-    }
+    return (
+        <h1>practiceSummary</h1>
+        
+    )
 }
+export default PracticeSummary;

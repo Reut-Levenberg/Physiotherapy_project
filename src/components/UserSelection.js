@@ -1,10 +1,8 @@
-import react,{Component} from 'react'
 
-export class UserSelection extends Component {
+const UserSelection = () =>  {
 
-    render() {
-        return (
-            <h1>UserSelection</h1>
-        )
-    }
+    return (
+        <h1>UserSelection</h1>
+    )
 }
+export default UserSelection;

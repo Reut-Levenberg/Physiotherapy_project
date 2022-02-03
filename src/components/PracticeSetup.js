@@ -1,10 +1,9 @@
 import react,{Component} from 'react'
 
-export class PracticeSetup extends Component {
+const PracticeSetup = () =>  {
 
-    render() {
-        return (
-            <h1>PracticeSetup</h1>
-        )
-    }
+    return (
+        <h1>PracticeSetup</h1>
+    )
 }
+export default PracticeSetup;

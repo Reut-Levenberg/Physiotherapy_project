@@ -1,19 +1,16 @@
-import react,{Component, useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Footer} from './Footer'
-import {NavigationBar} from './NavigationBar'
-import {Page} from './Page'
+import NavigationBar from './NavigationBar'
+import Page from './Page'
 
-export class Main extends Component {
+const Main = ({testObj, setIsLogin, dataGraph, setDataGraph, graphSetup, setGraphSetup}) => {
 
-    render() {
-        return (
-            <div className="App">
-                <NavigationBar setIsLogin={this.props.setIsLogin}/>
-                <Page dataGraph={this.props.dataGraph} graphSetup={this.props.graphSetup} setGraphSetup={this.props.setGraphSetup}/>
-          </div>
-        )
-    }
+    return (
+        <div className="App">
+            <NavigationBar setIsLogin={setIsLogin}/>
+            <Page dataGraph={dataGraph} setDataGraph={setDataGraph} graphSetup={graphSetup} setGraphSetup={setGraphSetup}/>
+            <h2>{testObj.testString}</h2>
+        </div>
+    )
 }
 
-
+export default Main;
