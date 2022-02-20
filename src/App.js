@@ -1,16 +1,26 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useInterval } from 'usehooks-ts'
+import Footer from './components/Footer'
+import EntranceManagement from './components/EntranceManagement'
+import Main from './components/Main'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Footer} from './components/Footer'
-import {EntranceManagement} from './components/EntranceManagement'
-import {Main} from './components/Main'
+import { useSelector } from 'react-redux';
+import ReceivingData from './MQTT/ReceivingData';
 
-function App() {
+// import {Buffer} from 'buffer';
+// Buffer.from('anything','base64');
+// global.Buffer = global.Buffer || require("buffer").Buffer;
 
+
+const App = () => {
+  
+  let login = useSelector(state => state.isLogin);
+  
+  ReceivingData();
   return (
     <div className="App">
-      <EntranceManagement/>
-      <Main/>
+      {(login) ? <Main /> : <EntranceManagement/>}
       <Footer/>
     </div>
   );
