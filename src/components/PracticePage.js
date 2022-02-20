@@ -19,6 +19,13 @@ const PracticePage = () =>  {
   
   const state = useSelector((state) => state.sideBar);
   let lineDate = cloneDeep(state);
+  let scale = lineDate.viewScale;
+  lineDate.labels = lineDate.labels.slice(0,scale);;
+  for (let i = 0; i < lineDate.datasets.length; i++)
+  {
+    lineDate.datasets[i].data = lineDate.datasets[i].data.slice(0,scale);
+  }
+  
   return (
       <div className='d-flex'>
           <SideBar/>

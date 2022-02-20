@@ -6,10 +6,12 @@ const SideBar = () =>  {
     const state = useSelector((state) => state.sideBar);
     const dispatch = useDispatch();
 
-    let defaultRangeVal = 300;
+    let defaultRangeVal = 600;
     const changeRange = () => {
         let rangeVal = document.getElementById('graphRange').value;
+        console.log(rangeVal);
         dispatch(changeView(rangeVal));
+        defaultRangeVal = rangeVal;
     }
 
     return (
@@ -23,8 +25,8 @@ const SideBar = () =>  {
                         <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[2].hidden} onChange={() => dispatch(changeSideBarRight())}/>Right
                     </li>
                     <li className="list-group-item">
-                        <label class="form-label">Range</label>
-                        <input type="range" class="form-range" min="5" max="600" step="0.5" id="graphRange" defaultValue={defaultRangeVal} onChange={() => changeRange()}/>
+                        <label className="form-label">Range</label>
+                        <input type="range" className="form-range" min="5" max="600" step="1" id="graphRange" defaultValue={defaultRangeVal} onChange={() => changeRange()}/>
                     </li>
                 </ul>
             </div>

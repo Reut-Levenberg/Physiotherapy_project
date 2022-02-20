@@ -2,36 +2,36 @@ import cloneDeep from 'lodash/cloneDeep';
 
 let dataGraphIntianal = {
 
-    viewScale: 5,
-    labels: Array(60).fill().map((_, idx) => 0 + idx),
+    viewScale: 600,
+    labels: Array(600).fill().map((_, idx) => 0 + idx),
     datasets: [
       {
         label: "Maximum",
         backgroundColor: "rgb(255, 0, 0)",
         borderColor: "rgb(255, 0, 0)",
         visible: true,
-        data: Array(60).fill(100),
+        data: Array(600).fill(100),
       },
       {
         label: "Left",
         backgroundColor: "rgb(60, 179, 113)",
         borderColor: "rgb(60, 179, 113)",
         hidden: false,
-        data:Array(60).fill(0)
+        data:Array(600).fill(0)
       },
       {
         label: "Right",
         backgroundColor: "rgb(0, 0, 255)",
         borderColor: "rgb(0, 0, 255)",
         hidden: false,
-        data: Array(60).fill(0)
+        data: Array(600).fill(0)
       },
       {
         label: "Minimum",
         backgroundColor: "rgb(255, 165, 0)",
         borderColor: "rgb(255, 165, 0)",
         visible: true,
-        data: Array(60).fill(30)
+        data: Array(600).fill(30)
       },
     ],
 };

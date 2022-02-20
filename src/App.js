@@ -10,7 +10,7 @@ import ReceivingData from './MQTT/ReceivingData';
 
 // import {Buffer} from 'buffer';
 // Buffer.from('anything','base64');
-global.Buffer = global.Buffer || require("buffer").Buffer;
+// global.Buffer = global.Buffer || require("buffer").Buffer;
 
 
 const App = () => {
