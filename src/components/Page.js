@@ -4,16 +4,18 @@ import PracticeSummary from './PracticeSummary'
 import PracticeSetup from './PracticeSetup'
 import PreviousPractice from './PreviousPractice'
 
-const Page = ({dataGraph, setDataGraph, graphSetup, setGraphSetup}) =>  {
+const Page = ({dataGraph, setDataGraph}) =>  {
  
     return (
         <div>
             <div className="App">
                 <div className="auth-wrapper mt-5">
                         <Routes>
-                            <Route exact path='/' element={<PracticePage dataGraph={dataGraph} setDataGraph={setDataGraph} graphSetup={graphSetup} setGraphSetup={setGraphSetup}/>} />
+                            {/* <Route exact path='/' element={<PracticePage dataGraph={dataGraph} setDataGraph={setDataGraph}/>} /> */}
+                            <Route exact path='/' element={<PracticePage />} />
                             <Route path="/practiceSetup" element={<PracticeSetup/>} />
-                            <Route path="/practicePage" element={<PracticePage dataGraph={dataGraph} setDataGraph={setDataGraph} graphSetup={graphSetup} setGraphSetup={setGraphSetup}/>} />
+                            {/* <Route path="/practicePage" element={<PracticePage dataGraph={dataGraph} setDataGraph={setDataGraph}/>} /> */}
+                            <Route path="/practicePage" element={<PracticePage/>} />
                             <Route path="/practiceSummary" element={<PracticeSummary/>} />
                             <Route path="/previousPractice" element={<PreviousPractice/>} />
                         </Routes>

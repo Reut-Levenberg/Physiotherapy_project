@@ -1,9 +1,10 @@
+import { useSelector, useDispatch } from 'react-redux';
+import {changeLogin} from '../actions/index'
 
-const Login = ({setIsLogin}) => {
-    
-    const handleLogin = () => {
-        setIsLogin(true);
-    }
+const Login = () => {
+    console.log("login");
+    // const state = useSelector((state) => state.isLogin);
+    const dispatch = useDispatch();
 
     return (
         <form>
@@ -26,7 +27,7 @@ const Login = ({setIsLogin}) => {
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block" onClick={handleLogin}>Submit</button>
+            <button type="submit" className="btn btn-primary btn-block" onClick={() => dispatch(changeLogin())}>Submit</button>
             <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
             </p>

@@ -1,31 +1,48 @@
-import cloneDeep from 'lodash/cloneDeep';
+import { useSelector, useDispatch } from 'react-redux';
+import {changeSideBarRight, changeSideBarLeft, changeView} from '../actions/index'
 
-const SideBar = ({dataGraph, setDataGraph}) =>  {
-    
-    const handleLeftShow = () => {
-        // copyDataGraph = cloneDeep(dataGraph);
-        // let copy = dataGraph;
-        // copy.datasets[1].hidden = !copy.datasets[1].hidden;
-        // setDataGraph(copy);
+const SideBar = () =>  {
+
+    const state = useSelector((state) => state.sideBar);
+    const dispatch = useDispatch();
+
+    let defaultRangeVal = 300;
+    const changeRange = () => {
+        let rangeVal = document.getElementById('graphRange').value;
+        dispatch(changeView(rangeVal));
     }
 
-    const handleRightShow = () => {
-        // let copy = cloneDeep(dataGraph);
-        // let copy = dataGraph;
-        // copy.datasets[2].hidden = !copy.datasets[2].hidden;
-        // setDataGraph(copy);
-    }
-    
     return (
-        <div className='sideBar d-flex'>
-            <ul className="list-group-flush">
-                <li className="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" checked={!dataGraph.datasets[1].hidden} onClick={handleLeftShow}/>Left
-                </li>
-                <li className="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" checked={!dataGraph.datasets[2].hidden} onClick={handleRightShow}/>Right
-                </li>
-            </ul>
+        <div>
+            <div className='sideBar d-flex'>
+                <ul className="list-group-flush">
+                    <li className="list-group-item">
+                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[1].hidden} onChange={() => dispatch(changeSideBarLeft())}/>Left
+                    </li>
+                    <li className="list-group-item">
+                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[2].hidden} onChange={() => dispatch(changeSideBarRight())}/>Right
+                    </li>
+                    <li className="list-group-item">
+                        <label class="form-label">Range</label>
+                        <input type="range" class="form-range" min="5" max="600" step="0.5" id="graphRange" defaultValue={defaultRangeVal} onChange={() => changeRange()}/>
+                    </li>
+                </ul>
+            </div>
+
+
+   
+            {/* <div className="row mb-4">
+                <div className="col-12">
+                <div className="btn-group btn-toggle"> 
+                    <button className="btn btn-sm btn-default">5 Sec</button>
+                    <button className="btn btn-sm btn-primary active">10 Min</button>
+                </div>
+                <hr/>
+                </div>
+            </div> */}
+            {/* <div className="form-check pl-0">
+                <input className="form-check-input" type="checkbox" checked-data-toggle="toggle" data-on="10 Min" data-off="5 Sec" data-onstyle="success" data-offstyle="danger" data-size="lg"/>
+            </div> */}
         </div>
     )
 }

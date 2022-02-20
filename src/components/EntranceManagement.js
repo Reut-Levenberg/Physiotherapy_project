@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
 
-const EntranceManagement = ({setTestObj, setIsLogin}) => {
+const EntranceManagement = () => {
 
     return (
         <div>
@@ -24,8 +24,8 @@ const EntranceManagement = ({setTestObj, setIsLogin}) => {
                 <div className="auth-wrapper mt-5">
                     <div className="auth-inner">
                         <Routes>
-                            <Route exact path='/' element={<Login setTestObj={setTestObj} setIsLogin={setIsLogin}/>} />
-                            <Route path="/sign-in" element={<Login setTestObj={setTestObj} setIsLogin={setIsLogin}/>} />
+                            <Route exact path='/' element={<Login/>} />
+                            <Route path="/sign-in" element={<Login/>} />
                             <Route path="/sign-up" element={<SignUp/>} />
                         </Routes>
                     </div>

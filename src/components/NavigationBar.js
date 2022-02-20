@@ -1,10 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const NavigationBar = ({setIsLogin}) => {
-
-    const hanleLogedOut = (page) =>{
-        setIsLogin(false);            
-    }
+const NavigationBar = () => {
 
     return (
         <div> 
