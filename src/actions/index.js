@@ -43,3 +43,9 @@ export const changeLabel = () => {
     };
 };
 
+export const changeUser = (newData) => {
+    return {
+            type: "CHANGE_USER",
+            payload: newData
+    };
+};
