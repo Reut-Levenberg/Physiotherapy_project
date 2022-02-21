@@ -37,3 +37,9 @@ export const changeView = (newData) => {
     };
 };
 
+export const changeLabel = () => {
+    return {
+            type: "CHANGE_LABEL"
+    };
+};
+

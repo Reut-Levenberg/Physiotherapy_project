@@ -9,7 +9,7 @@ const SideBar = () =>  {
     let defaultRangeVal = 600;
     const changeRange = () => {
         let rangeVal = document.getElementById('graphRange').value;
-        console.log(rangeVal);
+        // console.log(rangeVal);
         dispatch(changeView(rangeVal));
         defaultRangeVal = rangeVal;
     }
@@ -25,8 +25,12 @@ const SideBar = () =>  {
                         <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[2].hidden} onChange={() => dispatch(changeSideBarRight())}/>Right
                     </li>
                     <li className="list-group-item">
-                        <label className="form-label">Range</label>
+                        <label className="form-label">View Scale</label>
                         <input type="range" className="form-range" min="5" max="600" step="1" id="graphRange" defaultValue={defaultRangeVal} onChange={() => changeRange()}/>
+                        <div className="d-flex justify-content-between">
+                            <span>5 Sec</span>
+                            <span>10 Min</span>
+                        </div>
                     </li>
                 </ul>
             </div>
