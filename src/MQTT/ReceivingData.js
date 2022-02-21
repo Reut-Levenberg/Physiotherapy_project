@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {changeDataRight, changeDataLeft} from '../actions/index'
+import {changeDataRight, changeDataLeft, changeLabel} from '../actions/index'
 import { useInterval } from 'usehooks-ts'
 import React, { useState, useEffect } from 'react';
 
@@ -39,6 +39,8 @@ const ReceivingData = () =>  {
         { console.log('Received Message:', topic, payload.toString());
         data = parseFloat(payload.toString());
         dispatch(changeDataLeft(data));
+        dispatch(changeLabel());
+
     });
     
     var interval = setInterval(function(){

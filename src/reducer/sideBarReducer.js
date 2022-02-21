@@ -65,6 +65,14 @@ const dataGraph = (state = dataGraphIntianal, action) =>{
           copyState.viewScale = action.payload;
           return copyState;
         }
+        case "CHANGE_LABEL":{
+          let copyState = cloneDeep(state);
+          var today = new Date();
+          var time = today.getMinutes() + ":" + today.getSeconds();
+          copyState.labels.unshift(time);
+          copyState.labels.pop();
+          return copyState;
+        }
         default:
             return state;
     }
