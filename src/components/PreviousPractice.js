@@ -1,14 +1,51 @@
+import Accordion from 'react-bootstrap/Accordion'
 
 const PreviousPractice = () =>  {
     // setAriaExpanded=()=>{
     //     document.getElementsByClassName("link help js-help").setAttribute("aria-expanded", "true");
 
     // }
+    const lst = [{title: "25/02/2022", body: "Average intensity: 25, Weights: 4, Duration: 8 minutes"}, {title: "22/02/2022", body: "Average intensity: 23, Weights: 2, Duration: 8 minutes"}]
     return (
         <div id="accordion">
-            <h1>PreviousPractice</h1>
+            <h4>Previous Practice:</h4>
+            {/* <h1>{lst[0].body}</h1> */}
+            <Accordion defaultActiveKey="0">
+                {lst.map((item, index)=> 
+                <Accordion.Item eventKey={index}>
+                    <Accordion.Header>{item.title}</Accordion.Header>
+                    <Accordion.Body>{item.body}</Accordion.Body>
+                </Accordion.Item>)}
+            </Accordion>
+            {/* <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>Accordion Item #1</Accordion.Header>
+                    <Accordion.Body>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum.
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header>Accordion Item #2</Accordion.Header>
+                    <Accordion.Body>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum.
+                    </Accordion.Body>
+                </Accordion.Item>
+                </Accordion> */}
 
-            <div className="card">
+
+             {/* <div className="card">
                 <div className="card-header" id="headingOne">
                     <h5 className="mb-0">
                         <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -51,7 +88,7 @@ const PreviousPractice = () =>  {
                     </div>
                 </div>
             </div>
-            
+             */}
 </div>
         
     )

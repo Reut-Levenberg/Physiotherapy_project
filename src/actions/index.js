@@ -49,3 +49,9 @@ export const changeUser = (newData) => {
             payload: newData
     };
 };
+export const changeMaximum = (newData) => {
+    return {
+            type: "CHANGE_MAXIMUM",
+            payload: newData
+    };
+};

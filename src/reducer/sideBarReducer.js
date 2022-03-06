@@ -68,9 +68,14 @@ const dataGraph = (state = dataGraphIntianal, action) =>{
         case "CHANGE_LABEL":{
           let copyState = cloneDeep(state);
           var today = new Date();
-          var time = today.getMinutes() + ":" + today.getSeconds();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
           copyState.labels.unshift(time);
           copyState.labels.pop();
+          return copyState;
+        }
+        case "CHANGE_MAXIMUM":{
+          let copyState = cloneDeep(state);
+          copyState.datasets[0].data = Array(600).fill(action.payload);
           return copyState;
         }
         default:
