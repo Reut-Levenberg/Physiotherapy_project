@@ -26,7 +26,7 @@ const SideBar = () =>  {
                     </li>
                     <li className="list-group-item">
                         <label className="form-label">View Scale</label>
-                        <input type="range" className="form-range" min="5" max="600" step="1" id="graphRange" defaultValue={defaultRangeVal} onChange={() => changeRange()}/>
+                        <input type="range" className="form-range" min="5" max="600" step="1" id="graphRange" defaultValue={defaultRangeVal} onChange={() => dispatch(changeRange())}/>
                         <div className="d-flex justify-content-between">
                             <span>5 Sec</span>
                             <span>10 Min</span>
