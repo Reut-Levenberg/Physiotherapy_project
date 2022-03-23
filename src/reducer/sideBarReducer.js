@@ -3,36 +3,41 @@ import cloneDeep from 'lodash/cloneDeep';
 let dataGraphIntianal = {
 
     viewScale: 600,
-    labels: Array(600).fill().map((_, idx) => 0 + idx),
+    labels: Array(600).fill("-"),
+    // labels: Array(600).fill().map((_, i) => i+1),
     datasets: [
       {
-        label: "Maximum",
-        backgroundColor: "rgb(255, 0, 0)",
-        borderColor: "rgb(255, 0, 0)",
+        type: 'scatter',
+        mode: 'lines+points',
         visible: true,
-        data: Array(600).fill(100),
+        name: "Maximum",
+        marker: { color: 'red' },
+        y: Array(600).fill(60),
       },
       {
-        label: "Left",
-        backgroundColor: "rgb(60, 179, 113)",
-        borderColor: "rgb(60, 179, 113)",
-        hidden: false,
-        data:Array(600).fill(0)
-      },
-      {
-        label: "Right",
-        backgroundColor: "rgb(0, 0, 255)",
-        borderColor: "rgb(0, 0, 255)",
-        hidden: false,
-        data: Array(600).fill(0)
-      },
-      {
-        label: "Minimum",
-        backgroundColor: "rgb(255, 165, 0)",
-        borderColor: "rgb(255, 165, 0)",
+        type: 'scatter',
+        mode: 'lines+points',
         visible: true,
-        data: Array(600).fill(30)
+        name: "Left",
+        marker: { color: 'blue' },
+        y: Array(600).fill(0),
       },
+      {
+        type: 'scatter',
+        mode: 'lines+points',
+        visible: true,
+        name: "Right",
+        marker: { color: 'green' },
+        y: Array(600).fill(0),
+      },
+      // {
+
+      //   label: "Minimum",
+      //   backgroundColor: "rgb(255, 165, 0)",
+      //   borderColor: "rgb(255, 165, 0)",
+      //   visible: true,
+      //   data: Array(600).fill(30)
+      // },
     ],
 };
 
@@ -40,24 +45,24 @@ const dataGraph = (state = dataGraphIntianal, action) =>{
     switch (action.type) {
         case "HIDDEN_LEFT":{
           let copyState = cloneDeep(state);
-          copyState.datasets[1].hidden = !copyState.datasets[1].hidden;
+          copyState.datasets[1].visible = !copyState.datasets[1].visible;
           return copyState;
         }
         case "HIDDEN_RIGHT":{
           let copyState = cloneDeep(state);
-          copyState.datasets[2].hidden = !copyState.datasets[2].hidden;
+          copyState.datasets[2].visible = !copyState.datasets[2].visible;
           return copyState;
         }
         case "DATA_LEFT":{
           let copyState = cloneDeep(state);
-          copyState.datasets[1].data.unshift(action.payload);
-          copyState.datasets[1].data.pop();
+          copyState.datasets[1].y.unshift(action.payload);
+          copyState.datasets[1].y.pop();
           return copyState;
         }
         case "DATA_RIGHT":{
           let copyState = cloneDeep(state);
-          copyState.datasets[2].data.unshift(action.payload);
-          copyState.datasets[2].data.pop();
+          copyState.datasets[2].y.unshift(action.payload);
+          copyState.datasets[2].y.pop();
           return copyState;
         }
         case "CHANGE_VIEW_SCALE":{
@@ -66,16 +71,16 @@ const dataGraph = (state = dataGraphIntianal, action) =>{
           return copyState;
         }
         case "CHANGE_LABEL":{
-          let copyState = cloneDeep(state);
           var today = new Date();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          const copyState = cloneDeep(state);
           copyState.labels.unshift(time);
           copyState.labels.pop();
           return copyState;
         }
         case "CHANGE_MAXIMUM":{
           let copyState = cloneDeep(state);
-          copyState.datasets[0].data = Array(600).fill(action.payload);
+          copyState.datasets[0].y = Array(600).fill(action.payload);
           return copyState;
         }
         default:

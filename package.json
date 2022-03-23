@@ -17,10 +17,13 @@
     "mdbreact": "^5.2.0",
     "mqtt": "^4.3.5",
     "node-polyfill-webpack-plugin": "^1.1.4",
+    "plotly.js": "^2.11.1",
+    "plotly.js-basic-dist": "^2.11.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
     "react-chartjs-2": "^4.0.1",
     "react-dom": "^17.0.2",
+    "react-plotly.js": "^2.5.1",
     "react-redux": "^7.2.6",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
@@ -55,5 +58,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/plotly.js": "^1.54.20",
+    "@types/react-plotly.js": "^2.5.0"
   }
 }

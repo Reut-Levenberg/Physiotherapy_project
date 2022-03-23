@@ -5,32 +5,27 @@ import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Titl
 import cloneDeep from 'lodash/cloneDeep';
 import { useSelector, useDispatch } from 'react-redux';
 import SideBar from './SideBar';
-  ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-  );
+import createPlotlyComponent from 'react-plotly.js/factory';
+import Plotly from "plotly.js-basic-dist";
+
 
 const PracticePage = () =>  {
+  var Plot = createPlotlyComponent(Plotly);
   
   const state = useSelector((state) => state.sideBar);
+  console.log(state);
   let lineDate = cloneDeep(state);
   let scale = lineDate.viewScale;
-  lineDate.labels = lineDate.labels.slice(0,scale);;
+  lineDate.labels = lineDate.labels.slice(0,scale);
   for (let i = 0; i < lineDate.datasets.length; i++)
   {
-    lineDate.datasets[i].data = lineDate.datasets[i].data.slice(0,scale);
+    lineDate.datasets[i].y = lineDate.datasets[i].y.slice(0,scale);
   }
-  
   return (
       <div className='d-flex'>
           <SideBar/>
           <CDBContainer>
-            <Line data={lineDate} options={{responsive: true}} />
+            <Plot data={lineDate.datasets} layout={ {width: 900, height: 600, title: 'A Plot', xaxis: {showticklabels: false}}}/>
           </CDBContainer>              
       </div>
   )
