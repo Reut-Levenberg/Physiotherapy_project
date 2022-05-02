@@ -5,12 +5,18 @@ import Accordion from 'react-bootstrap/Accordion'
 // import Chart from 'canvasjs';
 import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend, BarElement} from 'chart.js';
 import { Bar } from "react-chartjs-2";
+import createPlotlyComponent from 'react-plotly.js/factory';
+import Plotly from "plotly.js-basic-dist";
+import { CDBContainer } from "cdbreact";
+
 
 
 ChartJS.register(CategoryScale, LinearScale, PointElement,LineElement, Title, Tooltip, Legend, BarElement);
 
 
 const PreviousPractice = () =>  {
+    var Plot = createPlotlyComponent(Plotly);
+
     // setAriaExpanded=()=>{
         //     document.getElementsByClassName("link help js-help").setAttribute("aria-expanded", "true");
         
@@ -82,12 +88,22 @@ const PreviousPractice = () =>  {
             
             {/* <h4>אימונים קודמים:</h4> */}
             {/* <Bar data = {data1} options={ {width: 900, height: 600, title: 'גרף האימון'}}/>      */}
-            <Bar data={obj} height= {'150px'} width= {'500px'} options={{ title: {
+            {/* <Bar data={obj} height= {'150px'} width= {'500px'} options={{ title: {
             display: true,
             text: 'אימונים קודמים :'
-        }, plugins: {legend: { display: true, position: "bottom"}}}}/>
+        }, plugins: {legend: { display: true, position: "bottom"}}}}/>; */}
+
+            <CDBContainer>
+            <Plot data={[
+          {type: 'bar', x: obj.labels, y: obj.datasets[0].data, name: 'זמן אימון'},
+          {type: 'bar', x: obj.labels, y: obj.datasets[1].data, name: '(ק"ג) משקל'},
+        ]}
+        layout={ {width: 900, height: 500, title: 'אימונים קודמים'} }/>
+          </CDBContainer>
         </div>
         
     )
 }
 export default PreviousPractice;
+
+{/* <Bar data={obj} layout={ {width: 900, height: 600, title: 'אימונים קודמים', xaxis: {showticklabels: false}}}/> */}
