@@ -22,10 +22,10 @@ const PracticeSetup = () =>  {
     //   ]
     return (
         <div>
-            <h4>Practice Setup:</h4>
+            <h4>פרטי אימון:</h4>
             <Box sx={{ maxWidth: 200 }}>
                 <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Dumbell (kg)</InputLabel>
+                    <InputLabel id="demo-simple-select-label">משקולת (ק"ג)</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select">
                         {options.map(option =>{return(<MenuItem value={option}>{option}</MenuItem>)})}
                     </Select>
@@ -33,17 +33,17 @@ const PracticeSetup = () =>  {
             </Box>
             <Box sx={{ maxWidth: 200 }}>
                 <FormControl fullWidth>
-                        <TextField id="outlined-number" label="Training cycles" type="number" InputProps={{inputProps: {min: 0}}}/>
+                        <TextField id="outlined-number" label="מספר מחזורים" type="number" InputProps={{inputProps: {min: 0}}}/>
                 </FormControl>
             </Box>
             <Box sx={{ maxWidth: 200 }}>
                 <FormControl fullWidth>
-                        <TextField id="outlined-number" label="Cycle time" type="number" InputProps={{inputProps: {min: 0}}}/>
+                        <TextField id="outlined-number" label="זמן מחזור" type="number" InputProps={{inputProps: {min: 0}}}/>
                 </FormControl>
             </Box>
             <Box sx={{ maxWidth: 200 }}>
                 <FormControl fullWidth>
-                        <TextField id="outlined-number" label="Muscle load" type="number" InputProps={{inputProps: {min: 0}}} onChange={(e) => dispatch(changeMaximum(e.target.value))}/>
+                        <TextField id="outlined-number" label="עומס שריר מרבי" type="number" InputProps={{inputProps: {min: 0}}} onChange={(e) => dispatch(changeMaximum(e.target.value))}/>
                 </FormControl>
             </Box>
             {/* <input type="number" min="0" name="muscle load" placeholder="Maximum muscle load is allowed" onChange={(e) => dispatch(changeMaximum(e.target.value))}/> */}

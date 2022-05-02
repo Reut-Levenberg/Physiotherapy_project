@@ -19,17 +19,17 @@ const SideBar = () =>  {
             <div className='sideBar d-flex'>
                 <ul className="list-group-flush">
                     <li className="list-group-item">
-                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[1].hidden} onChange={() => dispatch(changeSideBarLeft())}/>Left
+                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[1].hidden} onChange={() => dispatch(changeSideBarLeft())}/>שמאל
                     </li>
                     <li className="list-group-item">
-                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[2].hidden} onChange={() => dispatch(changeSideBarRight())}/>Right
+                        <input className="form-check-input me-1" type="checkbox" defaultChecked={!state.datasets[2].hidden} onChange={() => dispatch(changeSideBarRight())}/>ימין
                     </li>
                     <li className="list-group-item">
-                        <label className="form-label">View Scale</label>
+                        <label className="form-label">קנה מידה</label>
                         <input type="range" className="form-range" min="5" max="600" step="1" id="graphRange" defaultValue={defaultRangeVal} onChange={() => dispatch(changeRange())}/>
                         <div className="d-flex justify-content-between">
-                            <span>5 Sec</span>
-                            <span>10 Min</span>
+                            <span>5 שניות</span>
+                            <span>10 דקות</span>
                         </div>
                     </li>
                 </ul>

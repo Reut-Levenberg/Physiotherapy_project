@@ -2,7 +2,7 @@
 const PracticeSummary = () =>  {
 
     return (
-        <h1>practiceSummary</h1>
+        <h1>סיכום אימון</h1>
         
     )
 }

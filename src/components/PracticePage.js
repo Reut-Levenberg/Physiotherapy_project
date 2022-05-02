@@ -13,7 +13,6 @@ const PracticePage = () =>  {
   var Plot = createPlotlyComponent(Plotly);
   
   const state = useSelector((state) => state.sideBar);
-  console.log(state);
   let lineDate = cloneDeep(state);
   let scale = lineDate.viewScale;
   lineDate.labels = lineDate.labels.slice(0,scale);
@@ -25,7 +24,7 @@ const PracticePage = () =>  {
       <div className='d-flex'>
           <SideBar/>
           <CDBContainer>
-            <Plot data={lineDate.datasets} layout={ {width: 900, height: 600, title: 'A Plot', xaxis: {showticklabels: false}}}/>
+            <Plot data={lineDate.datasets} layout={ {width: 900, height: 600, title: 'גרף האימון', xaxis: {showticklabels: false}}}/>
           </CDBContainer>              
       </div>
   )

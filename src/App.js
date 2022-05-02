@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="App">
       {(login) ? <Main /> : <EntranceManagement/>}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
