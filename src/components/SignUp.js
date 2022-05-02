@@ -3,31 +3,31 @@ const SignUp = () =>  {
     
     return (
         <form>
-            <h3>Sign Up</h3>
+            <h3>הרשמה</h3>
 
             <div className="form-group">
-                <label>First name</label>
-                <input type="text" className="form-control" placeholder="First name" />
+                {/* <label>שם</label> */}
+                <input type="text" className="form-control" placeholder="שם פרטי" />
             </div>
 
             <div className="form-group">
-                <label>Last name</label>
-                <input type="text" className="form-control" placeholder="Last name" />
+                {/* <label>שם משפחה</label> */}
+                <input type="text" className="form-control" placeholder="שם משפחה" />
             </div>
 
             <div className="form-group">
-                <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" />
+                {/* <label>כתובת מייל</label> */}
+                <input type="email" className="form-control" placeholder="כתובת מייל" />
             </div>
 
             <div className="form-group">
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" />
+                {/* <label>סיסמא</label> */}
+                <input type="password" className="form-control" placeholder="סיסמא" />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+            <button type="submit" className="btn btn-primary btn-block">הרשמה</button>
             <p className="forgot-password text-right">
-                Already registered <a href="#">sign in?</a>
+                משתמש רשום? <a href="#">היכנס</a>
             </p>
         </form>
     );

@@ -2,34 +2,33 @@ import { useSelector, useDispatch } from 'react-redux';
 import {changeLogin} from '../actions/index'
 
 const Login = () => {
-    console.log("login");
     // const state = useSelector((state) => state.isLogin);
     const dispatch = useDispatch();
 
     return (
         <form>
-            <h3>Sign In</h3>
+            <h3>כניסה</h3>
 
             <div className="form-group">
-                <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" />
+                {/* <label>שם משתמש</label> */}
+                <input type="email" className="form-control" placeholder="שם משתמש" />
             </div>
 
             <div className="form-group">
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" />
+                {/* <label>סיסמא</label> */}
+                <input type="password" className="form-control" placeholder="סיסמא" />
             </div>
 
             <div className="form-group">
                 <div className="custom-control custom-checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                    <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    <label className="custom-control-label" htmlFor="customCheck1">זכור אותי</label>
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block" onClick={() => dispatch(changeLogin())}>Submit</button>
+            <button type="submit" className="btn btn-primary btn-block" onClick={() => dispatch(changeLogin())}>אישור</button>
             <p className="forgot-password text-right">
-                Forgot <a href="#">password?</a>
+                ?שכחת <a href="#">סיסמא</a>
             </p>
         </form>
     );

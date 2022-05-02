@@ -9,16 +9,16 @@ const NavigationBar = () => {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/PracticeSetup"}>Practice Setup</Link>
+                                    <Link className="nav-link" to={"/PracticeSetup"}>הגדרת אימון</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/practicePage"}>Practice Page</Link>
+                                    <Link className="nav-link" to={"/practicePage"}>צפייה באימון</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/practiceSummary"}>Practice Summary</Link>
+                                    <Link className="nav-link" to={"/practiceSummary"}>סיכום אימון</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/previousPractice"}>Previous Practice</Link>
+                                    <Link className="nav-link" to={"/previousPractice"}>אימונים קודמים</Link>
                                 </li>
                             </ul>
                         </div>
