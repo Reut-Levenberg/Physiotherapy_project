@@ -49,6 +49,13 @@ export const changeUser = (newData) => {
             payload: newData
     };
 };
+
+export const loggOut = () => {
+    return {
+            type: "LOGOUT",
+    };
+};
+
 export const changeMaximum = (newData) => {
     return {
             type: "CHANGE_MAXIMUM",
