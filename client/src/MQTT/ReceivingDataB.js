@@ -2,15 +2,89 @@ import { useSelector, useDispatch } from 'react-redux';
 import {changeDataRight, changeDataLeft, changeLabel} from '../actions/index'
 import { useInterval } from 'usehooks-ts'
 import React, { useState, useEffect } from 'react';
+//import * as Paho from 'react-paho-mqtt';
+import Paho from 'paho-mqtt';
 
-const ReceivingData = () =>  {
-    
+const ReceivingDataB = () =>  {
+
+    const dispatch = useDispatch();
+
+
+    var hostname = "localhost";
+var port = 9001;
+var clientId = "WebSocket";
+clientId += new Date().getUTCMilliseconds();;
+var topic = "esp32_hx711B";
+
+var mqttClient = new Paho.Client(hostname, port, clientId);
+mqttClient.onMessageArrived = MessageArrived;
+mqttClient.onConnectionLost = ConnectionLost;
+Connect();
+
+/*Initiates a connection to the MQTT broker*/
+function Connect(){
+	mqttClient.connect({
+	onSuccess: Connected,
+	onFailure: ConnectionFailed,
+	keepAliveInterval: 10,
+});
+}
+
+/*Callback for successful MQTT connection */
+function Connected() {
+	//console.log("Connected to broker");
+	mqttClient.subscribe(topic);
+}
+
+/*Callback for failed connection*/
+function ConnectionFailed(res) {
+	console.log("Connect failed:" + res.errorMessage);
+}
+
+/*Callback for lost connection*/
+function ConnectionLost(res) {
+	if (res.errorCode !== 0) {
+		//console.log("Connection lost:" + res.errorMessage);
+		Connect();
+	}
+}
+
+/*Callback for incoming message processing */
+function MessageArrived(message) {
+	//console.log(message.destinationName +" : " + message.payloadString);
+	console.log(message.payloadString);
+    var data = parseFloat(message.payloadString);
+    // data = payload.toString();
+    console.log(data);
+    dispatch(changeDataRight(data));
+    dispatch(changeLabel());
+
+	/*var a=parseInt(message.payloadString);
+	switch(message.payloadString){
+		case "ON":
+			displayClass = "on";
+			break;
+		case "OFF":
+			displayClass = "off";
+			break;
+		default:
+			displayClass = "unknown";
+	}
+	var topic = message.destinationName.split("/");
+	if (topic.length == 3){
+		var ioname = topic[1];
+		UpdateElement(ioname, displayClass);*/
+    }
+
+    /*
     const dispatch = useDispatch();
     var data = 0;
     const mqtt = require('mqtt/dist/mqtt');
     // alert("hey");
     const host = 'broker.emqx.io'
+    //const host = '127.0.0.1'
     const port = '8083';
+    //const port = '8080';
     const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
     
     const connectUrl = `ws://${host}:${port}/mqtt`;
@@ -101,5 +175,6 @@ const ReceivingData = () =>  {
     //     else
     //         return;
         
-    // };
-export default ReceivingData;
+    // };*/
+}
+export default ReceivingDataB;

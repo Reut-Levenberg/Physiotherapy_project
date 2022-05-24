@@ -3,6 +3,8 @@ import PracticePage from './PracticePage'
 import PracticeSummary from './PracticeSummary'
 import PracticeSetup from './PracticeSetup'
 import PreviousPractice from './PreviousPractice'
+import PatientDetails from './PatientDetails';
+import { CDBContainer } from "cdbreact";
 
 const Page = ({dataGraph, setDataGraph}) =>  {
  
@@ -10,6 +12,7 @@ const Page = ({dataGraph, setDataGraph}) =>  {
         <div>
             <div className="App">
                 <div className="auth-wrapper mt-5">
+                    <PatientDetails/>
                         <Routes>
                             {/* <Route exact path='/' element={<PracticePage dataGraph={dataGraph} setDataGraph={setDataGraph}/>} /> */}
                             <Route exact path='/' element={<PracticePage />} />
