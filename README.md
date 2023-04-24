@@ -4,7 +4,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#Built-with">built-with</a></li>
+    <li><a href="#Built-with">Built-with</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
