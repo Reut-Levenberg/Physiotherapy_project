@@ -1,13 +1,10 @@
 # Physiotherapy_project
-# :wedding: Vacation-booking 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">built-with</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#how-to-use">How-to-use?</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
