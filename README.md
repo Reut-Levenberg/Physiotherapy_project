@@ -4,7 +4,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#built-with">built-with</a></li>
+    <li><a href="#Built-with">built-with</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
@@ -24,7 +24,7 @@ view the summary of the current training and the previous trainings of his patie
 In the attached link you can see an example of running the system. 
 https://user-images.githubusercontent.com/87810944/178240084-0471a052-e843-4289-8463-769677123d5a.mp4
 
-## built-with
+## Built-with
 Built with the MERN stack (MongoDB, Express, React and NodeJS). 
 CSS
 Bootstrap
