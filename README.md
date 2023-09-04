@@ -25,7 +25,8 @@ In the attached link you can see an example of running the system.
 https://user-images.githubusercontent.com/87810944/178240084-0471a052-e843-4289-8463-769677123d5a.mp4
 
 ## Built-with
-Built with the MERN stack (MongoDB, Express, React and NodeJS), CSS, Bootstrap.
+Built with the MERN stack (MongoDB, Express, React and NodeJS).
+Designed with CSS and Bootstrap.
 
 ## Credits
 
