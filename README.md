@@ -4,7 +4,6 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#Built-with">Built-with</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
@@ -14,6 +13,8 @@ Tracking and monitoring system for weight lifting training in physiotherapy trea
 
 The project includes weight sensors connected to a microcontroller with an embedded system 
 and a control and management system as a web application. 
+The wb application built with the MERN stack (MongoDB, Express, React and NodeJS).
+Designed with CSS and Bootstrap.
 The communication between the two systems is carried out by a message broker in the MQTT protocol.
 
 The embedded system sends the measurements from the weight sensors to the control and management system in real time. 
@@ -23,10 +24,6 @@ view the summary of the current training and the previous trainings of his patie
 
 In the attached link you can see an example of running the system. 
 https://user-images.githubusercontent.com/87810944/178240084-0471a052-e843-4289-8463-769677123d5a.mp4
-
-## Built-with
-Built with the MERN stack (MongoDB, Express, React and NodeJS).
-Designed with CSS and Bootstrap.
 
 ## Credits
 
