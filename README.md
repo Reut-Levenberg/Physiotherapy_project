@@ -22,9 +22,7 @@ The web application integrates a user interface and allows the therapist to defi
 view the graphs of the training data in real time according to the measurements received, 
 view the summary of the current training and the previous trainings of his patients.
 
-<video src="https://github.com/Reut-Levenberg/Physiotherapy_project/assets/85216945/999ba134-1a7c-49b7-a7e5-24d93f3cd239"/>
-
-
+<video width="581" src="https://github.com/Reut-Levenberg/Physiotherapy_project/assets/85216945/999ba134-1a7c-49b7-a7e5-24d93f3cd239"/>
 
 ## Credits
 
