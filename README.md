@@ -1,4 +1,4 @@
-# Physiotherapy_project
+# Integrated Full-Stack & Embedded System (IoT/Data Pipeline)
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
